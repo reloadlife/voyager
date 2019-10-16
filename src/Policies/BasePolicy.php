@@ -52,6 +52,6 @@ class BasePolicy
 
         $dataType = self::$datatypes[get_class($model)];
 
-        return $user->hasPermission($action.'_'.$dataType->name);
+        return $user->hasPermission($action.'_'.(isset($dataType->name)?$dataType->name:uniqid("name-needed"));
     }
 }
